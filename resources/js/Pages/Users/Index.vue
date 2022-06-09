@@ -34,7 +34,7 @@
                             <Link :href="`/users/${user.id}/edit`" class="text-indigo-600 hover:text-indigo-900">
                                 Редактировать
                             </Link>
-                            <Link v-if="user.id != this.$page.props.auth.user.id" :href="`/users/${user.id}/delete`" method="delete" class="text-red-600 hover:text-red-900">
+                            <Link v-if="user.id != id" :href="`/users/${user.id}/delete`" method="delete" class="text-red-600 hover:text-red-900">
                                 Удалить
                             </Link>
                         </div>
@@ -49,7 +49,7 @@
 
 <script setup>
     import Pagination from "../../Shared/Pagination";
-    import { ref, watch } from "vue";
+    import { ref, watch, computed } from "vue";
     import debounce from "lodash/debounce";
     import {Inertia} from "@inertiajs/inertia";
 
@@ -62,4 +62,6 @@
     watch(search, debounce(function (value) {
         Inertia.get('/users', { search: value }, { preserveState: true, replace: true });
     }, 300));
+
+    let id = computed(() => this.$page.props.auth.user.id)
 </script>
