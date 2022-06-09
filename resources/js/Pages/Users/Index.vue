@@ -52,6 +52,7 @@
     import { ref, watch, computed } from "vue";
     import debounce from "lodash/debounce";
     import {Inertia} from "@inertiajs/inertia";
+    import { usePage } from '@inertiajs/inertia-vue3'
 
     let props = defineProps({
         users: Object,
@@ -63,5 +64,5 @@
         Inertia.get('/users', { search: value }, { preserveState: true, replace: true });
     }, 300));
 
-    let id = computed(() => this.$page.props.auth.user.id)
+    let id = computed(() => usePage().props.value.auth.user.id)
 </script>
