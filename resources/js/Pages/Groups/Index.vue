@@ -29,13 +29,15 @@
                 <td class="py-4 px-6 border-b border-grey-light">{{ group.date_start }}</td>
                 <td class="py-4 px-6 border-b border-grey-light">{{ group.date_end }}</td>
                 <td class="py-4 px-6 border-b border-grey-light">{{ group.category }}</td>
-                <td class="py-4 px-4 border-b border-grey-light flex justify-center gap-x-3 ">
-                    <Link :href="`/groups/${group.id}/edit`" class="text-indigo-600 hover:text-indigo-900">
-                        Редактировать
-                    </Link>
-                    <Link :href="`/groups/${group.id}/delete`" method="delete" class="text-red-600 hover:text-red-900">
-                        Удалить
-                    </Link>
+                <td class="py-4 px-4 border-b border-grey-light">
+                    <div class=" flex justify-center gap-x-3 ">
+                        <Link :href="`/groups/${group.id}/edit`" class="text-indigo-600 hover:text-indigo-900">
+                            Редактировать
+                        </Link>
+                        <Link :href="`/groups/${group.id}/delete`" method="delete" class="text-red-600 hover:text-red-900">
+                            Удалить
+                        </Link>
+                    </div>
                 </td>
             </tr>
             </tbody>

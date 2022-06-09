@@ -32,13 +32,15 @@
                 <td class="py-4 px-6 border-b border-grey-light">{{ auto.model }}</td>
                 <td class="py-4 px-6 border-b border-grey-light">{{ auto.registration_number }}</td>
                 <td class="py-4 px-6 border-b border-grey-light">{{ auto.user }}</td>
-                <td class="py-4 px-4 border-b border-grey-light flex justify-center gap-x-3 ">
-                    <Link :href="`/autos/${auto.id}/edit`" class="text-indigo-600 hover:text-indigo-900">
-                        Редактировать
-                    </Link>
-                    <Link :href="`/autos/${auto.id}/delete`" method="delete" class="text-red-600 hover:text-red-900">
-                        Удалить
-                    </Link>
+                <td class="py-4 px-4 border-b border-grey-light">
+                    <div class=" flex justify-center gap-x-3 ">
+                        <Link :href="`/autos/${auto.id}/edit`" class="text-indigo-600 hover:text-indigo-900">
+                            Редактировать
+                        </Link>
+                        <Link :href="`/autos/${auto.id}/delete`" method="delete" class="text-red-600 hover:text-red-900">
+                            Удалить
+                        </Link>
+                    </div>
                 </td>
             </tr>
             </tbody>

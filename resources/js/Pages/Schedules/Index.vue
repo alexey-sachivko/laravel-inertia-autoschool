@@ -30,13 +30,15 @@
                 <td class="py-4 px-6 border-b border-grey-light">{{ schedule.group }}</td>
                 <td class="py-4 px-6 border-b border-grey-light">{{ schedule.class_time }}</td>
                 <td class="py-4 px-6 border-b border-grey-light">{{ schedule.day_of_week }}</td>
-                <td class="py-4 px-4 border-b border-grey-light flex justify-center gap-x-3 ">
-                    <Link :href="`/schedules/${schedule.id}/edit`" class="text-indigo-600 hover:text-indigo-900">
-                        Редактировать
-                    </Link>
-                    <Link :href="`/schedules/${schedule.id}/delete`" method="delete" class="text-red-600 hover:text-red-900">
-                        Удалить
-                    </Link>
+                <td class="py-4 px-4 border-b border-grey-light">
+                    <div class=" flex justify-center gap-x-3 ">
+                        <Link :href="`/schedules/${schedule.id}/edit`" class="text-indigo-600 hover:text-indigo-900">
+                            Редактировать
+                        </Link>
+                        <Link :href="`/schedules/${schedule.id}/delete`" method="delete" class="text-red-600 hover:text-red-900">
+                            Удалить
+                        </Link>
+                    </div>
                 </td>
             </tr>
             </tbody>
